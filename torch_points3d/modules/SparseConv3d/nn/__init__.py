@@ -47,7 +47,8 @@ def set_backend(_backend):
     """
     assert backend_valid(_backend)
     try:
-        modules = importlib.import_module("." + _backend, __name__)  # noqa: F841
+        # modules = importlib.import_module("." + _backend, __name__)  # noqa: F841
+        modules = importlib.import_module(_backend)  # noqa: F841
         global sp3d_backend
         sp3d_backend = _backend
     except:
